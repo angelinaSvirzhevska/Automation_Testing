@@ -20,7 +20,7 @@ public class loginTest {
         webDriver = new ChromeDriver();
 
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         webDriver.get("https://qa-complex-app-for-testing.herokuapp.com/");
         System.out.println("site was opened");
@@ -37,6 +37,33 @@ public class loginTest {
         System.out.println("button was clicked");
 
         Assert.assertTrue("Button 'Sign Out' is not displayed", isButtonSignOutVisible());
+        webDriver.quit();
+    }
+
+    @Test
+    public void invalidLogin(){
+        File fileFF = new File("./src/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", fileFF.getAbsolutePath());
+        webDriver = new ChromeDriver();
+
+        webDriver.manage().window().maximize();
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        webDriver.get("https://qa-complex-app-for-testing.herokuapp.com/");
+        System.out.println("site was opened");
+
+        webDriver.findElement(By.xpath(".//input[@placeholder='Username']")).clear();
+        webDriver.findElement(By.xpath(".//input[@placeholder='Username']")).sendKeys("notExist");
+        System.out.println("'notExist' login was inputted");
+
+        webDriver.findElement(By.xpath(".//input[@placeholder='Password']")).clear();
+        webDriver.findElement(By.xpath(".//input[@placeholder='Password']")).sendKeys("123456qwerty");
+        System.out.println("pass was inputted");
+
+        webDriver.findElement(By.xpath(".//button[text()='Sign In']")).click();
+        System.out.println("button 'Sign In' was clicked");
+
+        Assert.assertFalse("Button 'Sign Out' is displayed", isButtonSignOutVisible());
         webDriver.quit();
     }
 

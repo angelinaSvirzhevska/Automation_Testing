@@ -1,0 +1,11 @@
+Link: https://qa-complex-app-for-testing.herokuapp.com/
+#Login page
+"Username" field: .//input[@placeholder='Username'
+"Password" field: .//input[@placeholder='Password
+"Sign In" button: .//button[text()='Sign In']
+Username for registration field: .//*[@id = 'username-register']
+Email for registration field: .//*[@id = 'email-register']
+Password for registration field: .//*[@id = 'password-register']
+Sign Up button: .//button[text()='Sign up for OurApp']
+
+#Home page
