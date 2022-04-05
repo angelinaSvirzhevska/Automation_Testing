@@ -1,0 +1,4 @@
+2022-05-04 17:25:44   INFO [pages.LoginPage] : 'auto' was inputted in element 
+2022-05-04 17:25:44   INFO [pages.LoginPage] : '123456qwerty' was inputted in element 
+2022-05-04 17:25:45   INFO [pages.LoginPage] : Element was clicked
+2022-05-04 17:25:45   INFO [pages.HomePage] : Element present
