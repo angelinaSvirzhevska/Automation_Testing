@@ -15,10 +15,9 @@ public class loginTestWithPO extends BaseTest {
 
     @Test
     public void invalidLogin(){
-        loginPage.openLoginPage();
-        loginPage.enterLoginInSignIn("a");
-        loginPage.enterPasswordInSignIn("123456qwerty");
-        loginPage.clickOnButtonSignIn();
+        loginPage.fillLoginFormAndSubmit("auto", "123");
         checkExpectedResult("Button SignOut is not visible", homePage.isButtonSignOutPresent(), false);
+        checkExpectedResult("Button SignIn is visible", loginPage.isButtonSignInPresent(), true);
+        checkExpectedResult("Error message is visible", loginPage.isErrorMessageSignInPresent(), true);
     }
 }

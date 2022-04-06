@@ -17,4 +17,6 @@ public class HomePage extends ParentPage{
     public boolean isButtonSignOutPresent(){
         return  isElementPresent(buttonSignOut);
     }
+
+
 }
