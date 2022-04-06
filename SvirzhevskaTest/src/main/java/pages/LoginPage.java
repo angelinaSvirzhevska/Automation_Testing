@@ -8,15 +8,20 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPage extends ParentPage{
     @FindBy(xpath = ".//input[@placeholder='Username']")
     private WebElement inputLogin;
-
     @FindBy(xpath = ".//input[@placeholder='Password']")
     private WebElement inputPassword;
     @FindBy(xpath = ".//button[text()='Sign In']")
     private WebElement buttonSignIn;
+    @FindBy(xpath = ".//div[text()='Invalid username / password']")
+    private  WebElement errorMessageSignIn;
 
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
     }
+
+    public boolean isButtonSignInPresent(){ return  isElementPresent(buttonSignIn); }
+
+    public  boolean isErrorMessageSignInPresent(){return isElementPresent(errorMessageSignIn);}
 
     public void openLoginPage(){
         try {
@@ -40,4 +45,13 @@ public class LoginPage extends ParentPage{
     public void clickOnButtonSignIn() {
         clickOnElement(buttonSignIn);
     }
+
+    public  void fillLoginFormAndSubmit(String login, String password){
+        openLoginPage();
+        enterLoginInSignIn(login);
+        enterPasswordInSignIn(password);
+        clickOnButtonSignIn();
+    }
+
+
 }
