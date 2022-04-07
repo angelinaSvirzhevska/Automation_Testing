@@ -20,6 +20,7 @@ public class BaseTest {
     WebDriver webDriver;
     protected LoginPage loginPage;
     protected HomePage homePage;
+
     @Before
     public void setUp(){
         WebDriverManager.chromedriver().setup();
