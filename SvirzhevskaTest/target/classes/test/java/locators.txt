@@ -9,3 +9,4 @@ Password for registration field: .//*[@id = 'password-register']
 Sign Up button: .//button[text()='Sign up for OurApp']
 
 #Home page
+Create post button: .//a[text()='Create Post']
