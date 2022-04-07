@@ -6,4 +6,5 @@ public class PostPage extends ParentPage{
     public PostPage(WebDriver webDriver) {
         super(webDriver);
     }
+
 }
