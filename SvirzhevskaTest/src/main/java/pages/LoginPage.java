@@ -26,6 +26,7 @@ public class LoginPage extends ParentPage {
 
     public boolean isErrorMessageSignInPresent() {
         return isElementPresent(errorMessageSignIn);
+
     }
 
     public void openLoginPage() {
