@@ -1,4 +1,4 @@
-2022-05-04 17:25:44   INFO [pages.LoginPage] : 'auto' was inputted in element 
-2022-05-04 17:25:44   INFO [pages.LoginPage] : '123456qwerty' was inputted in element 
-2022-05-04 17:25:45   INFO [pages.LoginPage] : Element was clicked
-2022-05-04 17:25:45   INFO [pages.HomePage] : Element present
+2022-07-04 19:24:39   INFO [pages.CreatePostPage] : Element present
+2022-07-04 19:24:39   INFO [pages.CreatePostPage] : 'Angelina Title of post 2022-04-07_19-24-34' was inputted in element 
+2022-07-04 19:24:39   INFO [pages.CreatePostPage] : 'Angelina Body of post2022-04-07_19-24-34' was inputted in element 
+2022-07-04 19:24:40   INFO [pages.CreatePostPage] : Element was clicked
