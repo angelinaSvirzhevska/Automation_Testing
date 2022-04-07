@@ -38,5 +38,6 @@ public class CreatePostPage extends ParentPage {
         clickOnElement(buttonSave);
         return new PostPage(webDriver);
 
+
     }
 }
