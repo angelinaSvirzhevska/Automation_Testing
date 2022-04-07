@@ -24,6 +24,7 @@ public class HomePage extends ParentPage{
     public HomePage checkIsButtonSignOutVisible() {
         Assert.assertTrue("Button Sign Out is not displayed", isButtonSignOutPresent());
         return this;
+
     }
 
     public CreatePostPage clickOnButtonCreatePost() {
