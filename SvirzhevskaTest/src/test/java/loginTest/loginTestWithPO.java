@@ -21,4 +21,5 @@ public class loginTestWithPO extends BaseTest {
         checkExpectedResult("Button SignIn is visible", loginPage.isButtonSignInPresent(), true);
         checkExpectedResult("Error message is visible", loginPage.isErrorMessageSignInPresent(), true);
     }
+
 }
