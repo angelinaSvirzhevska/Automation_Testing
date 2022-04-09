@@ -1,5 +1,2 @@
-2022-09-04 14:22:32   INFO [pages.CreatePostPage] : 'Angelina Body of post2022-04-09_14-22-26' was inputted in element 
-2022-09-04 14:22:32   INFO [pages.CreatePostPage] : Element was clicked
-2022-09-04 14:22:33   INFO [pages.PostPage] : Element present
-2022-09-04 14:22:33   INFO [pages.PostPage] : Element present
-2022-09-04 14:22:33   INFO [pages.PostPage] : Element was clicked
+2022-09-04 16:20:57   INFO [pages.PostPage] : Element was clicked
+2022-09-04 16:20:57   INFO [pages.ProfilePage] : Element present

@@ -3,6 +3,7 @@ package postTest;
 import baseTest.BaseTest;
 import libs.TestData;
 import libs.Util;
+import org.junit.After;
 import org.junit.Test;
 
 public class CreatePostTest  extends BaseTest {
@@ -26,9 +27,13 @@ public class CreatePostTest  extends BaseTest {
                 .clickOnButtonMyProfile()
                 .checkIsPostWasAdded(POST_TITLE)
                 ;
-
-
-
-
+    }
+    @After
+    public void deletePost(){
+        homePage
+                .openHomepage()
+                .checkIsButtonSignOutVisible()
+                .clickOnButtonMyProfile()
+                .deletePostWithTitleWhilePresent(POST_TITLE);
     }
 }
