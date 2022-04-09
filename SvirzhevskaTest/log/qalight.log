@@ -1,13 +1,2 @@
-2022-07-04 22:37:46   INFO [pages.LoginPage] : 'auto' was inputted in element 
-2022-07-04 22:37:46   INFO [pages.LoginPage] : '123456qwerty' was inputted in element 
-2022-07-04 22:37:48   INFO [pages.LoginPage] : Element was clicked
-2022-07-04 22:37:48   INFO [pages.HomePage] : Element present
-2022-07-04 22:38:09   INFO [io.github.bonigarcia.wdm.WebDriverManager] : Using chromedriver 100.0.4896.60 (since Google Chrome 100 is installed in your machine)
-2022-07-04 22:38:09   INFO [io.github.bonigarcia.wdm.WebDriverManager] : Exporting webdriver.chrome.driver as C:\Users\Admin\.m2\repository\webdriver\chromedriver\win32\100.0.4896.60\chromedriver.exe
-2022-07-04 22:38:12   INFO [pages.LoginPage] : Login page was opened
-2022-07-04 22:38:12   INFO [pages.LoginPage] : 'auto' was inputted in element 
-2022-07-04 22:38:12   INFO [pages.LoginPage] : '123' was inputted in element 
-2022-07-04 22:38:13   INFO [pages.LoginPage] : Element was clicked
-2022-07-04 22:38:18   INFO [pages.HomePage] : Element is not present
-2022-07-04 22:38:18   INFO [pages.LoginPage] : Element present
-2022-07-04 22:38:18   INFO [pages.LoginPage] : Element present
+2022-09-04 16:20:57   INFO [pages.PostPage] : Element was clicked
+2022-09-04 16:20:57   INFO [pages.ProfilePage] : Element present

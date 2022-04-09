@@ -3,6 +3,7 @@ package postTest;
 import baseTest.BaseTest;
 import libs.TestData;
 import libs.Util;
+import org.junit.After;
 import org.junit.Test;
 
 public class CreatePostTest  extends BaseTest {
@@ -20,10 +21,19 @@ public class CreatePostTest  extends BaseTest {
                 .enterTextIntoInputTitle(POST_TITLE)
                 .enterTextIntoInputBody(POST_BODY)
                 .clickOnTheSaveButton()
+                .checkIsButtonDeletePresent()
+                .checkIsSuccessMessagePresent()
+                .checkTextInSuccessMessage("New post successfully created.")
+                .clickOnButtonMyProfile()
+                .checkIsPostWasAdded(POST_TITLE)
                 ;
-
-
-
-
+    }
+    @After
+    public void deletePost(){
+        homePage
+                .openHomepage()
+                .checkIsButtonSignOutVisible()
+                .clickOnButtonMyProfile()
+                .deletePostWithTitleWhilePresent(POST_TITLE);
     }
 }
