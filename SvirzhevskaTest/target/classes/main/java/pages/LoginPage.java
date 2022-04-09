@@ -2,6 +2,7 @@ package pages;
 
 import libs.TestData;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,8 +26,10 @@ public class LoginPage extends ParentPage {
     private WebElement passwordRegistration;
     @FindBy(xpath = ".//button[text()='Sign up for OurApp']")
     private WebElement buttonSignUp;
-    @FindBy(xpath = ".//div[@class='alert alert-danger small liveValidateMessage liveValidateMessage--visible']")
-    private List<WebElement> errorMessagesRegistration;
+
+
+    public String errorMessagesRegistrationLocator =
+            ".//div[@class='alert alert-danger small liveValidateMessage liveValidateMessage--visible']";
 
 
     public LoginPage(WebDriver webDriver) {
@@ -39,10 +42,6 @@ public class LoginPage extends ParentPage {
 
     public boolean isErrorMessageSignInPresent() {
         return isElementPresent(errorMessageSignIn);
-    }
-
-    public boolean isErrorMessageSignUpPresent(int index) {
-        return isElementPresent(errorMessagesRegistration.get(index));
     }
 
 
@@ -92,34 +91,32 @@ public class LoginPage extends ParentPage {
         clickOnElement(buttonSignUp);
     }
 
-
-    public int countRegistrationErrors() {
-        boolean error;
-        int errorCount = 0;
-        for (int i = 0; i < errorMessagesRegistration.size(); i++) {
-            error = isErrorMessageSignUpPresent(i);
-            if (error) {
-                errorCount += 1;
-            }
-        }
-        return errorCount;
+    public void fillRegistrationFormAndClick(String login, String email, String pass){
+        openLoginPage();
+        enterLoginRegistration(login);
+        enterEmailRegistration(email);
+        enterPasswordRegistration(pass);
+        clickOnButtonSignUp();
     }
 
 
-    public boolean isErrorsEquals(String messages) {
+    public LoginPage checkErrors(String locator,String messages) {
+        List <WebElement> listOfErrors = webDriver.findElements(By.xpath(locator));
         String [] messagesArray = messages.split(";");
         boolean resultOfCheck = true;
-        if(messagesArray.length == countRegistrationErrors()){
-            for (int i = 0; i < messagesArray.length - 1; i++) {
-                if (!messagesArray[i].equals(errorMessagesRegistration.get(i).getText())){
+        if(messagesArray.length == listOfErrors.size()){
+            for (int i = 0; i < messagesArray.length; i++) {
+                if (!messagesArray[i].equals(listOfErrors.get(i).getText())){
                     resultOfCheck = false;
                 }
             }
 
+        } else{
+            resultOfCheck = false;
         }
-        return resultOfCheck;
+        Assert.assertTrue("Messages is not equal", resultOfCheck);
+        return this;
     }
-
 
     public HomePage loginWithValidCred() {
         fillLoginFormAndSubmit(TestData.VALID_LOGIN,TestData.VALID_PASSWORD);
