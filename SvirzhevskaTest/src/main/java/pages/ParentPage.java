@@ -97,6 +97,8 @@ public class ParentPage {
         }
     }
 
+
+
     private void writeErrorAndStopTest(Exception e) {
         logger.error("Can not work wit element " + e);
         Assert.fail("Can not work with element " + e);
