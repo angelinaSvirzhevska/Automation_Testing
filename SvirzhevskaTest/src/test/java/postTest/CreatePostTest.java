@@ -20,6 +20,7 @@ public class CreatePostTest  extends BaseTest {
                 .checkIsInputTitlePresent()
                 .enterTextIntoInputTitle(POST_TITLE)
                 .enterTextIntoInputBody(POST_BODY)
+                .setCheckboxStateInUniquePost("check")
                 .selectTextInDDSelectValue("Частное сообщение")
                 .selectValueInDDSelectValue("One Person")
                 .clickOnTheSaveButton()

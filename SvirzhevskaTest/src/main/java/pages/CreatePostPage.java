@@ -15,6 +15,8 @@ public class CreatePostPage extends ParentPage {
     private WebElement buttonSave;
     @FindBy(xpath = ".//select[@id='select1']")
     private WebElement dropDownSelectValue;
+    @FindBy (xpath = ".//input[@id='”UniquePost”']")
+    private WebElement checkboxUniquePost;
 
     public CreatePostPage(WebDriver webDriver) {
         super(webDriver);
@@ -50,6 +52,11 @@ public class CreatePostPage extends ParentPage {
 
     public CreatePostPage selectValueInDDSelectValue(String value) {
         selectValueInDD(dropDownSelectValue, value);
+        return this;
+    }
+
+    public  CreatePostPage setCheckboxStateInUniquePost(String expectedState){
+        setCheckboxState(checkboxUniquePost, expectedState);
         return this;
     }
 }

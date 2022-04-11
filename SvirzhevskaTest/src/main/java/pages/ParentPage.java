@@ -77,6 +77,26 @@ public class ParentPage {
         }
     }
 
+    //state = check or uncheck
+    protected void setCheckboxState(WebElement checkbox, String expectedState){
+        Boolean actualState = checkbox.isSelected();
+        if(expectedState.equals("check")){
+            if(!actualState){
+                clickOnElement(checkbox);
+            } else {
+                logger.info("Checkbox was clicked before");
+            }
+        } else if(expectedState.equals("uncheck")){
+            if(actualState){
+                clickOnElement(checkbox);
+            } else {
+                logger.info("Checkbox was clicked before");
+            }
+        } else{
+            logger.info("Expected state of checkbox must be check or uncheck");
+        }
+    }
+
     private void writeErrorAndStopTest(Exception e) {
         logger.error("Can not work wit element " + e);
         Assert.fail("Can not work with element " + e);
