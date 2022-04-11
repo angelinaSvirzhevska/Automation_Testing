@@ -1,6 +1,7 @@
 package pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,6 +16,10 @@ public class CreatePostPage extends ParentPage {
     private WebElement buttonSave;
     @FindBy(xpath = ".//select[@id='select1']")
     private WebElement dropDownSelectValue;
+    @FindBy (xpath = ".//input[@id='”UniquePost”']")
+    private WebElement checkboxUniquePost;
+
+    private String dropDownVariantsLocator = ".//option[text() ='%s']";
 
     public CreatePostPage(WebDriver webDriver) {
         super(webDriver);
@@ -50,6 +55,18 @@ public class CreatePostPage extends ParentPage {
 
     public CreatePostPage selectValueInDDSelectValue(String value) {
         selectValueInDD(dropDownSelectValue, value);
+        return this;
+    }
+
+    public  CreatePostPage setCheckboxStateInUniquePost(String expectedState){
+        setCheckboxState(checkboxUniquePost, expectedState);
+        return this;
+    }
+
+    public CreatePostPage selectTextInDropDownByClick(String text){
+        clickOnElement(dropDownSelectValue);
+        WebElement option = webDriver.findElement(By.xpath(String.format(dropDownVariantsLocator, text)));
+        clickOnElement(option);
         return this;
     }
 }
