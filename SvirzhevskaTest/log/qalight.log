@@ -1,6 +1,9 @@
-2022-12-04 21:08:17   INFO [pages.HomePage] : Element present
-2022-12-04 21:08:17   INFO [pages.HomePage] : Element present
-2022-12-04 21:08:17   INFO [pages.HomePage] : Element was clicked
-2022-12-04 21:08:18   INFO [pages.ProfilePage] : Element was clicked
-2022-12-04 21:08:18   INFO [pages.PostPage] : Element was clicked
-2022-12-04 21:08:18   INFO [pages.ProfilePage] : Element present
+2022-12-04 21:30:02   INFO [io.github.bonigarcia.wdm.WebDriverManager] : Using chromedriver 100.0.4896.60 (since Google Chrome 100 is installed in your machine)
+2022-12-04 21:30:02   INFO [io.github.bonigarcia.wdm.WebDriverManager] : Exporting webdriver.chrome.driver as C:\Users\Admin\.m2\repository\webdriver\chromedriver\win32\100.0.4896.60\chromedriver.exe
+2022-12-04 21:30:05   INFO [pages.LoginPage] : Login page was opened
+2022-12-04 21:30:05   INFO [pages.LoginPage] : 'tr' was inputted in element 
+2022-12-04 21:30:05   INFO [pages.LoginPage] : '123456qwerty' was inputted in element 
+2022-12-04 21:30:06   INFO [pages.LoginPage] : Element was clicked
+2022-12-04 21:30:11   INFO [pages.HomePage] : Element is not present
+2022-12-04 21:30:11   INFO [pages.LoginPage] : Element present
+2022-12-04 21:30:11   INFO [pages.LoginPage] : Element present
