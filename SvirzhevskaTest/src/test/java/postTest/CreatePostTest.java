@@ -1,7 +1,6 @@
 package postTest;
 
 import baseTest.BaseTest;
-import libs.TestData;
 import libs.Util;
 import org.junit.After;
 import org.junit.Test;
@@ -22,7 +21,7 @@ public class CreatePostTest  extends BaseTest {
                 .checkIsInputTitlePresent()
                 .enterTextIntoInputTitle(POST_TITLE)
                 .enterTextIntoInputBody(POST_BODY)
-                .setCheckboxStateInUniquePost("check")
+                //.setCheckboxStateInUniquePost("check")
                 .selectTextInDropDownByClick("Частное сообщение")
                 //.selectTextInDDSelectValue("Частное сообщение")
                 //.selectValueInDDSelectValue("One Person")

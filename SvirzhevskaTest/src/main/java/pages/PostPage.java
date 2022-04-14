@@ -2,17 +2,17 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ru.yandex.qatools.htmlelements.element.Button;
+import ru.yandex.qatools.htmlelements.element.TextBlock;
 
 public class PostPage extends ParentPage{
     @FindBy(xpath = ".//button[@data-original-title='Delete']")
-    private WebElement buttonDelete;
-
+    private Button buttonDelete;
     @FindBy(xpath = ".//*[@class='alert alert-success text-center']")
-    private WebElement successMessageElement;
+    private TextBlock successMessageElement;
     @FindBy(xpath = ".//img[@data-original-title='My Profile']")
-    private WebElement buttonMyProfile;
+    private Button buttonMyProfile;
 
 
     public PostPage(WebDriver webDriver) {

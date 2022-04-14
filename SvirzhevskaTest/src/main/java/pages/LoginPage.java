@@ -8,6 +8,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import ru.yandex.qatools.htmlelements.annotations.Name;
+import ru.yandex.qatools.htmlelements.element.Button;
+import ru.yandex.qatools.htmlelements.element.TextBlock;
+import ru.yandex.qatools.htmlelements.element.TextInput;
 
 
 import java.util.ArrayList;
@@ -15,21 +19,30 @@ import java.util.List;
 
 public class LoginPage extends ParentPage {
     @FindBy(xpath = ".//input[@placeholder='Username']")
-    private WebElement inputLogin;
+    @Name("Input Login")
+    private TextInput inputLogin;
+
     @FindBy(xpath = ".//input[@placeholder='Password']")
-    private WebElement inputPassword;
+    private TextInput inputPassword;
+
     @FindBy(xpath = ".//button[text()='Sign In']")
-    private WebElement buttonSignIn;
+    private Button buttonSignIn;
+
     @FindBy(xpath = ".//div[text()='Invalid username / password']")
-    private WebElement errorMessageSignIn;
+    private TextBlock errorMessageSignIn;
+
     @FindBy(xpath = ".//*[@id = 'username-register']")
-    private WebElement loginRegistration;
+    private TextInput loginRegistration;
+
     @FindBy(xpath = ".//*[@id = 'email-register']")
-    private WebElement emailRegistration;
+    private TextInput emailRegistration;
+
     @FindBy(xpath = ".//*[@id = 'password-register']")
-    private WebElement passwordRegistration;
+    private TextInput passwordRegistration;
+
     @FindBy(xpath = ".//button[text()='Sign up for OurApp']")
-    private WebElement buttonSignUp;
+    private Button buttonSignUp;
+
     @FindBy(xpath = ".//div[@class='alert alert-danger small liveValidateMessage liveValidateMessage--visible']")
     private List <WebElement> listOfErrors;
 
