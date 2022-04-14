@@ -15,21 +15,24 @@ public class CreatePostTest  extends BaseTest {
 
         loginPage
                 .loginWithValidCred()
-                .checkIsButtonSignOutVisible()
+                .checkIsRedirectOnHomePage()
+                //.checkIsButtonSignOutVisible()
                 .clickOnButtonCreatePost()
                 .checkIsRedirectOnCreatePostPage()
                 .checkIsInputTitlePresent()
                 .enterTextIntoInputTitle(POST_TITLE)
                 .enterTextIntoInputBody(POST_BODY)
-                .setCheckboxStateInUniquePost("check")
+                //.setCheckboxStateInUniquePost("check")
                 .selectTextInDropDownByClick("Частное сообщение")
                 //.selectTextInDDSelectValue("Частное сообщение")
                 //.selectValueInDDSelectValue("One Person")
                 .clickOnTheSaveButton()
-                .checkIsButtonDeletePresent()
+                .checkIsRedirectToPostPage()
+                //.checkIsButtonDeletePresent()
                 .checkIsSuccessMessagePresent()
                 .checkTextInSuccessMessage("New post successfully created.")
                 .clickOnButtonMyProfile()
+                .checkIsRedirectToProfilePage()
                 .checkIsPostWasAdded(POST_TITLE)
                 ;
     }

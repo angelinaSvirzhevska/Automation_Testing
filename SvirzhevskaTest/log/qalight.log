@@ -1,9 +1,12 @@
-2022-12-04 21:30:02   INFO [io.github.bonigarcia.wdm.WebDriverManager] : Using chromedriver 100.0.4896.60 (since Google Chrome 100 is installed in your machine)
-2022-12-04 21:30:02   INFO [io.github.bonigarcia.wdm.WebDriverManager] : Exporting webdriver.chrome.driver as C:\Users\Admin\.m2\repository\webdriver\chromedriver\win32\100.0.4896.60\chromedriver.exe
-2022-12-04 21:30:05   INFO [pages.LoginPage] : Login page was opened
-2022-12-04 21:30:05   INFO [pages.LoginPage] : 'tr' was inputted in element 
-2022-12-04 21:30:05   INFO [pages.LoginPage] : '123456qwerty' was inputted in element 
-2022-12-04 21:30:06   INFO [pages.LoginPage] : Element was clicked
-2022-12-04 21:30:11   INFO [pages.HomePage] : Element is not present
-2022-12-04 21:30:11   INFO [pages.LoginPage] : Element present
-2022-12-04 21:30:11   INFO [pages.LoginPage] : Element present
+2022-14-04 13:38:59   INFO [pages.CreatePostPage] :  element was clicked
+2022-14-04 13:38:59   INFO [pages.CreatePostPage] :  'Button Save'  element was clicked
+2022-14-04 13:38:59   INFO [pages.PostPage] :  'Button Delete'  Element present
+2022-14-04 13:38:59   INFO [pages.PostPage] :  'Success Message Element'  Element present
+2022-14-04 13:39:00   INFO [pages.PostPage] :  'Button My Profile'  element was clicked
+2022-14-04 13:39:01   INFO [pages.LoginPage] : Login page was opened
+2022-14-04 13:39:01   INFO [pages.HomePage] :  'Button Sign Out'  Element present
+2022-14-04 13:39:01   INFO [pages.HomePage] :  'Button Sign Out'  Element present
+2022-14-04 13:39:01   INFO [pages.HomePage] :  'Button My Profile'  element was clicked
+2022-14-04 13:39:01   INFO [pages.ProfilePage] : Post with title element was clicked
+2022-14-04 13:39:02   INFO [pages.PostPage] :  'Button Delete'  element was clicked
+2022-14-04 13:39:02   INFO [pages.ProfilePage] :  'Success Post Delete Element'  Element present
