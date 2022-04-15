@@ -9,6 +9,9 @@ import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import pages.HomePage;
 import pages.LoginPage;
 
@@ -31,8 +34,7 @@ public class BaseTest {
     @Before
     public void setUp(){
         logger.info("--------" + testName.getMethodName() + " was started -----------------");
-        WebDriverManager.chromedriver().setup();
-        webDriver = new ChromeDriver();
+        webDriver = initDriver();
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         webDriver.manage().window().maximize();
 
@@ -48,5 +50,23 @@ public class BaseTest {
 
     protected void checkExpectedResult(String message, boolean actualResult, boolean expectedResult){
         Assert.assertThat(message,actualResult, is(expectedResult));
+    }
+
+    private WebDriver initDriver(){
+        String browser = System.getProperty("browser");
+        if(browser == null || browser.equalsIgnoreCase("chrome")){
+            WebDriverManager.chromedriver().setup();
+            webDriver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("fireFox")){
+            WebDriverManager.firefoxdriver().setup();
+            webDriver = new FirefoxDriver();
+        } else  if (browser.equalsIgnoreCase("opera")){
+            WebDriverManager.operadriver().setup();
+            webDriver = new OperaDriver();
+        } else if ("ie".equalsIgnoreCase(browser)){
+            WebDriverManager.iedriver().arch32().setup();
+            return new InternetExplorerDriver();
+        }
+        return webDriver;
     }
 }
