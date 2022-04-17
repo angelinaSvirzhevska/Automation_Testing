@@ -79,6 +79,11 @@
       <artifactId>poi</artifactId>
       <version>3.14</version>
     </dependency>
+    <dependency>
+      <groupId>org.aeonbits.owner</groupId>
+      <artifactId>owner</artifactId>
+      <version>1.0.4</version>
+    </dependency>
   </dependencies>
 
   <build>
