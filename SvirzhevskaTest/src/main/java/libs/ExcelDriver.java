@@ -10,7 +10,6 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import org.apache.poi.ss.usermodel.CellType;
 
 /*
  *  Class that provides methods for extracting data from Excel tables.
@@ -23,6 +22,7 @@ public class ExcelDriver {
      * are String. We should take care of value's type by himself when will use
      * data values in the test.
      */
+
     public static Map getMultipleData(String dataFileName, String sheetName, int columnNumber) throws IOException {
         Map<String, String> testData = new HashMap<>();
         // Create stream for reading from file
@@ -38,7 +38,7 @@ public class ExcelDriver {
         for (int k = 1; k < (dataSize + 1); k++) {
             HSSFCell keyCell = sheet.getRow(k).getCell(0);
             HSSFCell valueCell = sheet.getRow(k).getCell(columnNumber);
-            valueCell.setCellType(CellType.STRING);
+            valueCell.setCellType(HSSFCell.CELL_TYPE_STRING);
             testData.put(keyCell.getStringCellValue(), valueCell.getStringCellValue());
         }
 
@@ -80,7 +80,7 @@ public class ExcelDriver {
         for (int k = 0; k < (dataSize); k++) {
             HSSFCell keyCell = sheet.getRow(2).getCell(k);
             HSSFCell valueCell = sheet.getRow(3).getCell(k);
-            valueCell.setCellType(CellType.STRING);
+            valueCell.setCellType(HSSFCell.CELL_TYPE_STRING);
             testData.put(keyCell.getStringCellValue(), valueCell.getStringCellValue());
         }
 
