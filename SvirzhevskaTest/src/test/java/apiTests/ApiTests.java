@@ -2,6 +2,7 @@ package apiTests;
 
 import api.AuthorDTO;
 import api.PostDTO;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.assertj.core.api.SoftAssertions;
@@ -17,6 +18,7 @@ import static api.EndPoints.POST_BY_USER;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
+
 public class ApiTests {
     final String USER_NAME = "svirzhevska";
     Logger logger = Logger.getLogger(getClass());
@@ -25,6 +27,7 @@ public class ApiTests {
     public void getAllPostsByUser(){
         PostDTO[] responseBody = given()
                 .contentType(ContentType.JSON)
+                .filter(new AllureRestAssured())
                 .log().all()
         .when()
                 .get(POST_BY_USER  , USER_NAME)
